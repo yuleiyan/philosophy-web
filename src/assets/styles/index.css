@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Maghfirea";
+	src: url("/src/assets/fonts/Maghfirea.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Wastogi";
+	src: url("/src/assets/fonts/Wastogi-2Oarv.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Sispany";
+	src: url("/src/assets/fonts/Sispany.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("/src/assets/fonts/graphik/GraphikThin.otf") format("opentype");
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("/src/assets/fonts/graphik/GraphikThin.otf") format("opentype");
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("/src/assets/fonts/graphik/GraphikLight.otf") format("opentype");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("/src/assets/fonts/graphik/GraphikRegular.otf") format("opentype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("/src/assets/fonts/graphik/GraphikSemibold.otf") format("opentype");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("/src/assets/fonts/graphik/GraphikBold.otf") format("opentype");
+	font-weight: 700;
+}
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+
+		--primary: 32, 83%, 80%;
+		--primary-foreground: 32, 0%, 100%;
+
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 0 0% 75%;
+
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 222.2 84% 4.9%;
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+		--ring: 212.7 26.8% 83.9%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@layer components {
+	.text-center2 {
+		@apply text-center fixed left-[5%] right-[5%] top-1/2 -translate-y-1/2;
+	}
+
+	.text-title {
+		@apply text-[max(30px,calc(15px+2.34375vw))];
+	}
+
+    .container-image-parallax {
+        @apply -mt-8 h-[300vh] mx-3 sm:mx-[23%] md:mx-[39%];
+    }
+}
+
+body {
+	background-color: #181818;
+	/* background-color: #1a202c; */
+	/* color: white; */
+}
+
+.progress-bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 3px;
+	height: 100vh;
+	background: #f4c38a; /* Fondo claro similar al de un scrollbar track */
+	transform-origin: center top;
+	opacity: 1;
+}
+
+.progress-track {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 3px;
+	height: 100vh;
+	background: hsla(0, 0%, 100%, 0.3);
+	transform-origin: top;
+	opacity: 1;
+}
+
+.snap-y-mandatory {
+	scroll-snap-type: y mandatory;
+	overflow-y: auto;
+	margin: 0;
+	height: 100vh;
+}
+
+.slide-in {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #0f0f0f;
+	transform-origin: bottom;
+}
+
+.slide-in-botton {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 50vh;
+	background: #f0f0f0;
+	transform-origin: right;
+}
+
+.slide-out-botton {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 50vh;
+	background: #f0f0f0;
+	transform-origin: left;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+	background: transparent;
+}
+
+@layer utilities {
+	.perspective-600 {
+		perspective: 600px;
+	}
+	.preserve-3d {
+		transform-style: preserve-3d;
+	}
+	.rotate-reset {
+		transform: rotateY(0deg);
+		transform-style: flat;
+	}
+}
+
+.burger {
+	width: 22.5px;
+	position: relative;
+}
+
+.burger::after,
+.burger::before {
+	content: "";
+	height: 1px;
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	display: block;
+	transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.burger::after {
+	top: -4px;
+}
+
+.burger::before {
+	top: 4px;
+}
+
+.burgerActive::after {
+	transform: rotate(45deg);
+	top: -1px;
+}
+
+.burgerActive::before {
+	transform: rotate(-45deg);
+	top: 1px;
+}
+
+.clip-path-cross {
+	clip-path: polygon(
+		10% 25%,
+		35% 25%,
+		35% 0%,
+		65% 0%,
+		65% 25%,
+		90% 25%,
+		90% 50%,
+		65% 50%,
+		65% 100%,
+		35% 100%,
+		35% 50%,
+		10% 50%
+	);
+}
+
+.characters-text {
+	/* Estilos para h1 */
+	h1 {
+		@apply text-4xl font-bold mb-4;
+	}
+
+	/* Estilos para h2 */
+	h2 {
+		@apply text-3xl font-semibold mb-3;
+	}
+
+	h3 {
+		@apply text-2xl font-semibold mb-7;
+	}
+
+	h4 {
+		@apply text-xl font-semibold mb-6;
+	}
+
+	h5 {
+		@apply text-lg font-semibold mb-4;
+	}
+
+	/* Estilos para ul */
+	ul {
+		@apply list-disc list-inside mb-3;
+	}
+
+	ol {
+		@apply list-decimal list-inside mb-3;
+	}
+	/* Estilos para li */
+
+	/* Estilos para i y em */
+	i,
+	em {
+		@apply italic;
+	}
+	p {
+		@apply mb-5;
+	}
+}
